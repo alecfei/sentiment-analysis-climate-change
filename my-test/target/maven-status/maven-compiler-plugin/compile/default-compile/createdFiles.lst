@@ -1,0 +1,7 @@
+streamingTest/TwitterConfiguration.class
+streamingTest/BasicCallback.class
+streamingTest/TweetDetails.class
+streamingTest/TwitterKafkaProducer.class
+streamingTest/UserDetails.class
+streamingTest/App.class
+streamingTest/KafkaConfiguration.class
