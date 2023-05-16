@@ -5,6 +5,7 @@ In this project, the author initially planned to build a maven project using Kaf
 ### Apache Maven and Apache Kafka
 Apache Maven is an useful tool for build and monitor projects either from scratch or with existing archetypes. Besides, Maven also has many available remote repositories that can be added according to the project we want to create (https://mvnrepository.com/) for use. For example, to build a project using Apache Kafka to stream tweets and put them into a created topic and then consume from it and potentially transfer the data into an ideal database storage system for future use, kafka-clients and twitter-api-java-sdk are the two essential dependencies needed. The **my-test folder** displayed the simple pipeline of the whole streaming process created by author. However, due to the restricted access level of the API keys, only recent tweets can be retrieved, which does not meet the main purpose of this study. In a real-world project within companies and organisations, this approach would be more feasible.
 
-### Download data from archive
+### Collecting data using *snscrape* library
+Alternatively, the author found an useful python library - **snscrape** to efficiently retrieve tweets posted in relate to Irish weather from 2020-01-01 to 2023-05-01.
 
 
