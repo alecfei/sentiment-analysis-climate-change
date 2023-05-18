@@ -17,7 +17,8 @@ Unfortunately, through experimenting, the "#weather" topic turned out to be too 
 ### Transfer data into database
 
 
-### Process tweets on Hadoop system using Mapreduce
+### Process tweets on Hadoop system using Mapreduce and Apache Spark
+
 
 #### References
 
