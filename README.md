@@ -24,7 +24,7 @@ Before determining which databases to use for storing the raw and processed data
 
 ### Process tweets on Hadoop system using Mapreduce and Apache Spark
 
-
+We 
 #### References
 
 - <p>https://github.com/Harshali15/Real-WorldProject-Kafka</p>
