@@ -2,7 +2,7 @@
 
 In this project, the author initially planned to build a maven project using Kafka to stream tweets about Irish weather in the past two years and then initiate sentimental analysis and make prediction of the sentiment at one week, one month and three months going forward. Overall, it is an time-series oriented analysis. 
 
-However, due to the change made by Twitter company recently, gaining its API authentication with full access is problematic and expensive for individuals. Therefore, the author downloaded the required data utilising an efficient scraping tool instead.
+However, due to the change made by Twitter company recently, gaining its API authentication with full access is problematic and expensive for individuals. Thereafter, the author tried to collect data utilising an efficient scraping tool instead, however, some major problems were encounter. Eventually, we downloaded a dataset from Kaggle for study.
 
 - **Apache Maven and Apache Kafka**
 
