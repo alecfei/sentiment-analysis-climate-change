@@ -1,0 +1,25 @@
+/usr/bin/java  -classpath /home/alec_fei/ycsb-0.17.0/conf:/home/alec_fei/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/alec_fei/ycsb-0.17.0/lib/core-0.17.0.jar:/home/alec_fei/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/alec_fei/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/alec_fei/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/alec_fei/ycsb-0.17.0/lib/mysql-connector-j-8.0.32.jar:/home/alec_fei/ycsb-0.17.0/cassandra-binding/lib/cassandra-binding-0.17.0.jar:/home/alec_fei/ycsb-0.17.0/cassandra-binding/lib/cassandra-driver-core-3.0.0.jar:/home/alec_fei/ycsb-0.17.0/cassandra-binding/lib/guava-16.0.1.jar:/home/alec_fei/ycsb-0.17.0/cassandra-binding/lib/metrics-core-3.1.2.jar:/home/alec_fei/ycsb-0.17.0/cassandra-binding/lib/netty-buffer-4.0.33.Final.jar:/home/alec_fei/ycsb-0.17.0/cassandra-binding/lib/netty-codec-4.0.33.Final.jar:/home/alec_fei/ycsb-0.17.0/cassandra-binding/lib/netty-common-4.0.33.Final.jar:/home/alec_fei/ycsb-0.17.0/cassandra-binding/lib/netty-handler-4.0.33.Final.jar:/home/alec_fei/ycsb-0.17.0/cassandra-binding/lib/netty-transport-4.0.33.Final.jar:/home/alec_fei/ycsb-0.17.0/cassandra-binding/lib/slf4j-api-1.7.25.jar site.ycsb.Client -load -db site.ycsb.db.CassandraCQLClient -p hosts=127.0.0.1 -s -P workloads/workloadb
+[OVERALL], RunTime(ms), 52148
+[OVERALL], Throughput(ops/sec), 191.76190841451253
+[TOTAL_GCS_PS_Scavenge], Count, 9
+[TOTAL_GC_TIME_PS_Scavenge], Time(ms), 479
+[TOTAL_GC_TIME_%_PS_Scavenge], Time(%), 0.9185395413055152
+[TOTAL_GCS_PS_MarkSweep], Count, 0
+[TOTAL_GC_TIME_PS_MarkSweep], Time(ms), 0
+[TOTAL_GC_TIME_%_PS_MarkSweep], Time(%), 0.0
+[TOTAL_GCs], Count, 9
+[TOTAL_GC_TIME], Time(ms), 479
+[TOTAL_GC_TIME_%], Time(%), 0.9185395413055152
+[CLEANUP], Operations, 1
+[CLEANUP], AverageLatency(us), 2335744.0
+[CLEANUP], MinLatency(us), 2334720
+[CLEANUP], MaxLatency(us), 2336767
+[CLEANUP], 95thPercentileLatency(us), 2336767
+[CLEANUP], 99thPercentileLatency(us), 2336767
+[INSERT], Operations, 10000
+[INSERT], AverageLatency(us), 4615.3717
+[INSERT], MinLatency(us), 631
+[INSERT], MaxLatency(us), 2510847
+[INSERT], 95thPercentileLatency(us), 14359
+[INSERT], 99thPercentileLatency(us), 28367
+[INSERT], Return=OK, 10000
