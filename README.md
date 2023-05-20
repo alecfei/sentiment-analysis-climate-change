@@ -20,7 +20,7 @@ After downloading the original data from Kaggle, we made some neccessary modific
 
 ### Transfer data into database
 
-Before determining which databases to use for storing the raw and processed data, we use YCSB (Yahoo! Cloud Serving Benchmark) as a tool to test the performance of each database, i.e. MySQL, MongoDB, Apache Cassandra and Apache Hbase. Workloada and workloadb were evaluated. Workloada has an even ratio between reading and updating (50% and 50%). On the other hand, workloadb is more reading focused (95% read and 5% update). Additionally, we set the recordcount and operationcount both to 10000. Ideally, configuring the count close to the actual number in our data can provide a better comparison. But considering the running time with higher counts, especially in MySQL, we decided on 10000 to provide some general insights. Results see in ***benchmark testing*** folder.
+Before determining which databases to use for storing the raw and processed data, we use YCSB (Yahoo! Cloud Serving Benchmark) as a tool to test the performance of each database, i.e. MySQL, MongoDB, Apache Cassandra and Apache Hbase. Workloada and workloadb were evaluated. Workloada has 50% for inserting, 40% for reading and 10% for updating. On the other hand, workloadb is more reading focused (90% read and 10% update). Additionally, we set the recordcount and operationcount both to 10000. Ideally, configuring the count close to the actual number in our data can provide a better comparison. But considering the running time with higher counts, especially in MySQL, we decided on 10000 to provide some general insights. Results see in ***benchmark testing*** folder.
 
 ### Process tweets on Hadoop system using Mapreduce and Apache Spark
 
