@@ -14,15 +14,22 @@ However, due to the change made by Twitter company recently, gaining its API aut
 
 *Through experimenting, the "#weather" topic turned out to be too general. The retrieval of the tweets was extremely time-consuming. As a result, we narrowed down to **#global warming** and made some adjustments when scraping data, such as setting limitation on the number of tweets being collected (see in ***sample folder***). However, besides the duplicating issue, one fatal issue was the continuity of the timestamp which would seriously affect our analysis. To ensure the validity of the research, the author downloaded a dataset about climate change from Kaggle instead.*
 
-### Download data and modify
+### Download data
 
-After downloading the original data from Kaggle, we made some neccessary modifications, i.e. changing the format of the timestamp, dropping unneeded columns and changing columns' names, narrowing down the time range considering the size of the data etc.
+The original data from Kaggle is owned by Lexyr and collected using [SocialGrep Exports](https://socialgrep.com/exports). This dataset contains all the posts and comments on Reddit mentioning the terms "climate" and "change", all the way until 2022-09-01. To preserve users' anonymity and to prevent targeted harassment, the data does not include usernames.
 
-### Transfer data into database
+### Database benchmarking
 
-Before determining which databases to use for storing the raw and processed data, we use YCSB (Yahoo! Cloud Serving Benchmark) as a tool to test the performance of each database, i.e. MySQL, MongoDB, Apache Cassandra and Apache Hbase. Workloada and workloadb were evaluated. Workloada has 50% for inserting, 40% for reading and 10% for updating. On the other hand, workloadb is more reading focused (90% read and 10% update). Additionally, we set the recordcount and operationcount both to 10000. Ideally, configuring the count close to the actual number in our data can provide a better comparison. But considering the running time with higher counts, especially in MySQL, we decided on 10000 to provide some general insights. Results see in ***benchmark testing*** folder.
+Before determining which databases to use for storing the raw and processed data, we use YCSB (Yahoo! Cloud Serving Benchmark) as a tool to test the performance of each database, i.e. MySQL, MongoDB, Apache Cassandra and Apache Hbase. Workloada and workloadb were evaluated. Workloada has 50% for inserting, 40% for reading and 10% for updating. On the other hand, workloadb is more reading focused (90% read and 10% update). Additionally, we set the recordcount and operationcount both to 10000. Ideally, configuring the count close to the actual number in our data can provide a better understanding. But considering the running time with higher counts, especially in MySQL, we decided on 10000 to provide some general insights. Results see in ***benchmark testing*** folder. After comparison, we decided to use MongoDB for the raw dataset and Hbase for the processed one.
 
-### Process tweets on Hadoop system using Mapreduce and Apache Spark
+### Upload original data onto MongoDB and modify
+
+The following code was used to upload local datset onto MongoDB server:
+- mongoimport --db climate_change --collection original --file /home/alec_fei/Downloads/the-reddit-climate-change-dataset-comments.csv --type csv --headerline
+
+We made some neccessary modifications after, i.e. changing the format of the timestamp, dropping unneeded columns and changing columns' names, narrowing down the time range considering the size of the data etc.
+
+### Process on Hadoop system using Mapreduce and Apache Spark
 
 
 #### References
@@ -32,4 +39,3 @@ Before determining which databases to use for storing the raw and processed data
 - <p>https://github.com/JustAnotherArchivist/snscrape</p>
 - <p>https://www.kaggle.com/datasets/pavellexyr/the-reddit-climate-change-dataset?select=the-reddit-climate-change-dataset-posts.csv</p>
 - <p>https://github.com/brianfrankcooper/YCSB/tree/master</p>
-
