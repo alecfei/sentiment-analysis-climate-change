@@ -34,7 +34,6 @@ The following code was used to upload local datset onto `MongoDB` server:
 
 ```bash
 mongoimport --db climate_change --collection original --file /home/alec_fei/Downloads/the-reddit-climate-change-dataset-comments.csv --type csv --headerline
-```
 
 <button class="btn" data-clipboard-target="#mongoimport-command">Copy</button>
 
@@ -53,7 +52,7 @@ mongoimport --db climate_change --collection original --file /home/alec_fei/Down
     cursor: pointer;
   }
 </style>
-
+```
 
 
 We made some neccessary modifications after, i.e. changing the format of the timestamp, dropping unneeded columns and changing columns' names, narrowing down the time range considering the size of the data etc.
