@@ -44,12 +44,13 @@ mongoimport --db climate_change --collection original --file /home/alec_fei/Down
 
 ### Process on Hadoop system using Mapreduce and Apache Spark
 
-The documents in modified collection on MongoDB became our final data for processing and analysing. We then imported the documents to `Hadoop`:
+The documents in modified collection on MongoDB became our final data for processing and analysing. We then export the data to our local machine using the code below:
 
 ```bash
+mongoexport --db climate_change --collection modified --out /home/alec_fei/Downloads/climate_change_reddit.json
 
 ```
-
+`Hadoop`
 
 #### References
 
