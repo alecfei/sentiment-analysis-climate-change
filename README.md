@@ -52,6 +52,13 @@ mongoexport --db climate_change --collection modified --out /home/alec_fei/Downl
 ```
 `Hadoop`
 
+- Mapreduce
+ * word count in "type" field
+ ```bash
+ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./word_count.py -mapper ./word_count.py -file ./word_count.py -reducer ./word_count.py -input /climate_change/climate_change_reddit.json -output /word_count
+ ```
+ * 
+
 #### References
 
 - <p>https://github.com/Harshali15/Real-WorldProject-Kafka</p>
