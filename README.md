@@ -27,36 +27,8 @@ Additionally, we set the recordcount and operationcount both to 10000. Ideally, 
 ### Upload original data onto MongoDB and modify
 
 The following code was used to upload local datset onto ```MongoDB``` server:
-<div id="copyable-area">
-     mongoimport --db climate_change --collection original --file /home/alec_fei/Downloads/the-reddit-climate-change-dataset-comments.csv --type csv --headerline
-     <button onclick="copyToClipboard()">Copy</button>
-</div>
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Copy mongoimport Command</title>
-</head>
-<body>
-  <button id="copyButton" onclick="copyCommand()">Copy</button>
-  
-  <script>
-    function copyCommand() {
-      var command = 'mongoimport --db climate_change --collection original --file /home/alec_fei/Downloads/the-reddit-climate-change-dataset-comments.csv --type csv --headerline';
-
-      var tempInput = document.createElement('input');
-      tempInput.setAttribute('value', command);
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      document.execCommand('copy');
-      document.body.removeChild(tempInput);
-
-      alert('Command copied to clipboard!');
-    }
-  </script>
-</body>
-</html>
-
+-
+mongoimport --db climate_change --collection original --file /home/alec_fei/Downloads/the-reddit-climate-change-dataset-comments.csv --type csv --headerline
 
 We made some neccessary modifications after, i.e. changing the format of the timestamp, dropping unneeded columns and changing columns' names, narrowing down the time range considering the size of the data etc.
 
