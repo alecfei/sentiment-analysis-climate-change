@@ -20,18 +20,18 @@ However, due to the change made by Twitter company recently, gaining its API aut
 
 ### Download data
 
-The original data from ```Kaggle``` is owned by Lexyr and collected using [SocialGrep Exports](https://socialgrep.com/exports). This dataset contains all the posts and comments on Reddit mentioning the terms "climate" and "change", all the way until 2022-09-01. To preserve users' anonymity and to prevent targeted harassment, the data does not include usernames.
+The original data from `Kaggle` is owned by Lexyr and collected using [SocialGrep Exports](https://socialgrep.com/exports). This dataset contains all the posts and comments on Reddit mentioning the terms "climate" and "change", all the way until 2022-09-01. To preserve users' anonymity and to prevent targeted harassment, the data does not include usernames.
 
 ### Database benchmarking
 
-Before determining which databases to use for storing the raw and processed data, we use ```YCSB``` (Yahoo! Cloud Serving Benchmark) as a tool to test the performance of each database, i.e. MySQL, MongoDB, Apache Cassandra and Apache Hbase. Workloada and workloadb were evaluated. Workloada has ratios of 50% for inserting, 40% for reading and 10% for updating. On the other hand, workloadb is more reading focused (90% read and 10% update).
+Before determining which databases to use for storing the raw and processed data, we use `YCSB` (Yahoo! Cloud Serving Benchmark) as a tool to test the performance of each database, i.e. MySQL, MongoDB, Apache Cassandra and Apache Hbase. Workloada and workloadb were evaluated. Workloada has ratios of 50% for inserting, 40% for reading and 10% for updating. On the other hand, workloadb is more reading focused (90% read and 10% update).
 
 Additionally, we set the recordcount and operationcount both to 10000. Ideally, configuring the count close to the actual number in our dataset can provide a more precise information. But considering the running time with higher counts, especially in MySQL, we decided on 10000 to provide some general insights. Results see in ***benchmark testing*** folder. After comparison, we decided to use MongoDB for the raw dataset and Hbase for the processed one.
 
 ### Upload original data onto MongoDB and modify
 
-The following code was used to upload local datset onto ```MongoDB``` server:
-- 
+The following code was used to upload local datset onto `MongoDB` server:
+
 ```bash
 mongoimport --db climate_change --collection original --file /home/alec_fei/Downloads/the-reddit-climate-change-dataset-comments.csv --type csv --headerline
 ```
