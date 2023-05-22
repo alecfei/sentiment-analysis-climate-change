@@ -30,13 +30,13 @@ Additionally, we set the recordcount and operationcount both to 10000. Ideally, 
 
 ### Upload original data onto MongoDB and modify
 
-The following code was used to upload local datset onto `MongoDB` server (a `database` called **climate_change** and a new `collection` named **original** were created beforehand):
+- The following code was used to upload local datset onto `MongoDB` server (a `database` called **climate_change** and a new `collection` named **original** were created beforehand):
 
 ```bash
 mongoimport --db climate_change --collection original --file /home/alec_fei/Downloads/the-reddit-climate-change-dataset-comments.csv --type csv --headerline
 ```
 
-After that, we made some neccessary modification (another `collection` **modified** was created for storing):
+- After that, we made some neccessary modification (another `collection` **modified** was created for storing):
   * Deleting documents that are before 2020-09-01, which is labelled as 1598918400 in created_utc timestamp;
   * Dropping unneccessary documents, i.e. "_id", "type", "id", "subreddit", "permalink", "sentiment" and "score";
   * Transferring the UTC timestamp into a more readable one;
