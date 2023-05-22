@@ -14,13 +14,13 @@ However, due to the change made by Twitter company recently, gaining its API aut
 
 *Alternatively, the author found an useful python library - **snscrape** - that can efficiently scrape tweets posted in relate to Irish weather from 2018-01-01 to 2023-05-01. However, the data collected were too small (see in ***sample folder***). Therefore, the topic was expanded to the weather globally.* 
 
-*Through experimenting, the "#weather" topic turned out to be too general. The retrieval of the tweets was extremely time-consuming. As a result, we narrowed down to **#global warming** and made some adjustments when scraping data, such as setting limitation on the number of tweets being collected (see in ***sample folder***). However, besides the duplicating issue, one fatal issue was the continuity of the timestamp which would seriously affect our analysis. To ensure the validity of the research, the author downloaded a dataset with comments about climate change until September 2022 from Kaggle.*
+*Through experimenting, the "#weather" topic turned out to be too general. The retrieval of the tweets was extremely time-consuming. As a result, we narrowed down to **#global warming** and made some adjustments when scraping data, such as setting limitation on the number of tweets being collected (see in ***sample folder***). However, besides the duplicating issue, one fatal issue was the continuity of the timestamp which would seriously affect our analysis. To ensure the validity of the research, the author downloaded a dataset with comments about climate change until October 2022 from Kaggle.*
 
 ---
 
 ### Download data
 
-The original data from `Kaggle` is owned by Lexyr and collected using [SocialGrep Exports](https://socialgrep.com/exports). This dataset contains all the posts and comments on Reddit mentioning the terms "climate" and "change", all the way until 2022-09-01. To preserve users' anonymity and to prevent targeted harassment, the data does not include usernames.
+The original data from `Kaggle` is owned by Lexyr and collected using [SocialGrep Exports](https://socialgrep.com/exports). This dataset contains all the posts and comments on Reddit mentioning the terms "climate" and "change", all the way until 2022-10-29. To preserve users' anonymity and to prevent targeted harassment, the data does not include usernames.
 
 ### Database benchmarking
 
@@ -30,13 +30,15 @@ Additionally, we set the recordcount and operationcount both to 10000. Ideally, 
 
 ### Upload original data onto MongoDB and modify
 
-The following code was used to upload local datset onto `MongoDB` server:
+The following code was used to upload local datset onto `MongoDB` server (a `database` called **climate_change** and a new `collection` named **original** were created beforehand):
 
 ```bash
 mongoimport --db climate_change --collection original --file /home/alec_fei/Downloads/the-reddit-climate-change-dataset-comments.csv --type csv --headerline
 ```
 
-We made some neccessary modifications after, i.e. changing the format of the timestamp, dropping unneeded columns and changing columns' names, narrowing down the time range considering the size of the data etc.
+After that, we made some neccessary modification (another collection **modified** was created for storing):
+* Dropping unneccessary documents, i.e. "_id", "type", "id", "subreddit", "permalink", "sentiment" and "score";
+* Transferring the UTC timestamp into a more readable one;
 
 ### Process on Hadoop system using Mapreduce and Apache Spark
 
