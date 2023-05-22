@@ -37,9 +37,9 @@ mongoimport --db climate_change --collection original --file /home/alec_fei/Down
 ```
 
 After that, we made some neccessary modification (another `collection` **modified** was created for storing):
-[ ] Deleting documents that are before 2020-09-01, which is labelled as 1598918400 in created_utc timestamp;
-[ ] Dropping unneccessary documents, i.e. "_id", "type", "id", "subreddit", "permalink", "sentiment" and "score";
-[ ] Transferring the UTC timestamp into a more readable one;
+- [ ] Deleting documents that are before 2020-09-01, which is labelled as 1598918400 in created_utc timestamp;
+- [ ] Dropping unneccessary documents, i.e. "_id", "type", "id", "subreddit", "permalink", "sentiment" and "score";
+- [ ] Transferring the UTC timestamp into a more readable one;
 
 ### Process on Hadoop system using Mapreduce and Apache Spark
 
