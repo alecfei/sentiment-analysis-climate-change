@@ -57,25 +57,25 @@ mongoexport --db climate_change --collection modified --out /home/alec_fei/Downl
 - word count in "type" field
 
 ```bash
- hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -files ./word_count.py -mapper ./word_count.py -reducer ./word_count.py -input /climate_change/climate_change_reddit.json -output /word_count
+hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./wordCountMapper.py -mapper ./wordCountMapper.py -file ./wordCountReducer.py -reducer ./wordCountReducer.py -input /climate_change/climate_change_reddit.json -output /output/word_count
 ```
 
 - top 10 single-word in "text" field
 
 ```bash
-
+hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./topTenSingleWordMapper.py -mapper ./topTenSingleWordMapper.py -file ./topTenSingleWordReducer.py -reducer ./topTenSingleWordReducer.py -input /climate_change/climate_change_reddit.json -output /output/top10_single_word
 ```
 
 - top 10 double-words in "text" field
 
 ```bash
-
+hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./topTenDoubleWordMapper.py -mapper ./topTenDoubleWordMapper.py -file ./topTenDoubleWordReducer.py -reducer ./topTenDoubleWordReducer.py -input /climate_change/climate_change_reddit.json -output /output/top10_double_word
 ```
 
 - top 10 triple-words in "text" field
 
 ```bash
-
+hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./topTenTripleWordMapper.py -mapper ./topTenTripleWordMapper.py -file ./topTenTripleWordReducer.py -reducer ./topTenTripleWordReducer.py -input /climate_change/climate_change_reddit.json -output /output/top10_triple_word
 ```
 
 
