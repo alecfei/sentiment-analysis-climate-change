@@ -37,7 +37,7 @@ mongoimport --db climate_change --collection original --file /home/alec_fei/Down
 ```
 
 - After that, we made some neccessary modification (another `collection` **modified** was created for storing):
-  * Deleting `documents` that are before 2020-09-01, which is labelled as 1598918400 in created_utc timestamp;
+  * Deleting `documents` that are before 2021-09-01, which is labelled as 1630435200 in created_utc timestamp;
   * Dropping unneccessary `documents`, i.e. "_id", "type", "id", "subreddit", "permalink", "sentiment" and "score";
   * Transforming the UTC timestamp into a more readable version;
   * Changing the `field names` of the documents.
