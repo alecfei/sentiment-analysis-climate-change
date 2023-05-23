@@ -9,6 +9,9 @@ from nltk.corpus import stopwords
 word_pattern = re.compile(r"\b\w+\b")
 
 # Set of stop words
+# Uncomment the next two lines when needed
+#import nltk
+#nltk.download('stopwords')
 stop_words = set(stopwords.words("english"))
 
 # Read JSON records from standard input
