@@ -53,19 +53,19 @@ mongoexport --db climate_change --collection modified --out /home/alec_fei/Downl
 `Hadoop`
 
 - **Mapreduce**
-  * word count in "type" field
+    * word count in "type" field
 ```bash
  hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -files ./word_count.py -mapper ./word_count.py -reducer ./word_count.py -input /climate_change/climate_change_reddit.json -output /word_count
 ```
-  * top 10 single-word in "text" field
+    * top 10 single-word in "text" field
 ```bash
 
 ```
-  * top 10 double-words in "text" field
+    * top 10 double-words in "text" field
 ```bash
 
 ```
-  * top 10 triple-words in "text" field
+    * top 10 triple-words in "text" field
 ```bash
 
 ```
@@ -83,5 +83,6 @@ mongoexport --db climate_change --collection modified --out /home/alec_fei/Downl
 - [Kaggle Dataset](https://www.kaggle.com/datasets/pavellexyr/the-reddit-climate-change-dataset?select=the-reddit-climate-change-dataset-posts.csv)
 - [YCSB](https://github.com/brianfrankcooper/YCSB/tree/master)
 - [MongoDB Tutorial](https://www.tutorialspoint.com/mongodb/index.htm)
+- [Apache Hadoop](https://hadoop.apache.org/)
 - [Mrjob](https://mrjob.readthedocs.io/en/latest/index.html)
 - [Yelp_Mrjob](https://github.com/Yelp/mrjob/tree/master)
