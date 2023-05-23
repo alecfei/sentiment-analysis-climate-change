@@ -75,10 +75,13 @@ mongoexport --db climate_change --collection modified --out /home/alec_fei/Downl
 
 #### References
 
-- <p>https://github.com/Harshali15/Real-WorldProject-Kafka</p>
-- <p>https://github.com/david-romero/demo-twitter-kafka/tree/master</p>
-- <p>https://github.com/JustAnotherArchivist/snscrape</p>
-- <p>https://www.kaggle.com/datasets/pavellexyr/the-reddit-climate-change-dataset?select=the-reddit-climate-change-dataset-posts.csv</p>
-- <p>https://github.com/brianfrankcooper/YCSB/tree/master</p>
-- <p>https://www.tutorialspoint.com/mongodb/index.htm</p>
-- <p>https://mrjob.readthedocs.io/en/latest/index.html</p>
+- [Apache Kafka](https://kafka.apache.org/)
+- [Apache Maven](https://maven.apache.org/)
+- [Kafka_Harshali](https://github.com/Harshali15/Real-WorldProject-Kafka)
+- [Kafka_Twitter_David](https://github.com/david-romero/demo-twitter-kafka/tree/master)
+- [Snscrape](https://github.com/JustAnotherArchivist/snscrape)
+- [Kaggle Dataset](https://www.kaggle.com/datasets/pavellexyr/the-reddit-climate-change-dataset?select=the-reddit-climate-change-dataset-posts.csv)
+- [YCSB](https://github.com/brianfrankcooper/YCSB/tree/master)
+- [MongoDB Tutorial](https://www.tutorialspoint.com/mongodb/index.htm)
+- [Mrjob](https://mrjob.readthedocs.io/en/latest/index.html)
+- [Yelp_Mrjob](https://github.com/Yelp/mrjob/tree/master)
