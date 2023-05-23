@@ -52,28 +52,37 @@ mongoexport --db climate_change --collection modified --out /home/alec_fei/Downl
 
 `Hadoop`
 
-- **Mapreduce**
-    * word count in "type" field
+#### *Mapreduce*
+
+- word count in "type" field
+
 ```bash
  hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -files ./word_count.py -mapper ./word_count.py -reducer ./word_count.py -input /climate_change/climate_change_reddit.json -output /word_count
 ```
-    * top 10 single-word in "text" field
-```bash
 
-```
-    * top 10 double-words in "text" field
-```bash
+- top 10 single-word in "text" field
 
-```
-    * top 10 triple-words in "text" field
 ```bash
 
 ```
 
-- Apache Spark
+- top 10 double-words in "text" field
+
+```bash
+
+```
+
+- top 10 triple-words in "text" field
+
+```bash
+
+```
 
 
-#### References
+#### *Apache Spark*
+
+
+##### References
 
 - [Apache Kafka](https://kafka.apache.org/)
 - [Apache Maven](https://maven.apache.org/)
