@@ -48,16 +48,36 @@ The documents in modified collection on MongoDB became our final data for proces
 
 ```bash
 mongoexport --db climate_change --collection modified --out /home/alec_fei/Downloads/climate_change_reddit.json
-
 ```
+
 `Hadoop`
 
-- Mapreduce
+- **Mapreduce**
   * word count in "type" field
+
 ```bash
- hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./word_count.py -mapper ./word_count.py -file ./word_count.py -reducer ./word_count.py -input /climate_change/climate_change_reddit.json -output /word_count
+ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -files ./word_count.py -mapper ./word_count.py -reducer ./word_count.py -input /climate_change/climate_change_reddit.json -output /word_count
 ```
-  * 
+  * top 10 single-word in "text" field
+
+```bash
+
+```
+
+  * top 10 double-words in "text" field
+
+```bash
+
+```
+
+  * top 10 triple-words in "text" field
+
+```bash
+
+```
+
+- Apache Spark
+
 
 #### References
 
@@ -66,3 +86,5 @@ mongoexport --db climate_change --collection modified --out /home/alec_fei/Downl
 - <p>https://github.com/JustAnotherArchivist/snscrape</p>
 - <p>https://www.kaggle.com/datasets/pavellexyr/the-reddit-climate-change-dataset?select=the-reddit-climate-change-dataset-posts.csv</p>
 - <p>https://github.com/brianfrankcooper/YCSB/tree/master</p>
+- <p>https://www.tutorialspoint.com/mongodb/index.htm</p>
+- <p>https://mrjob.readthedocs.io/en/latest/index.html</p>
