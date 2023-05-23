@@ -93,5 +93,4 @@ mongoexport --db climate_change --collection modified --out /home/alec_fei/Downl
 - [YCSB](https://github.com/brianfrankcooper/YCSB/tree/master)
 - [MongoDB Tutorial](https://www.tutorialspoint.com/mongodb/index.htm)
 - [Apache Hadoop](https://hadoop.apache.org/)
-- [Mrjob](https://mrjob.readthedocs.io/en/latest/index.html)
-- [Yelp_Mrjob](https://github.com/Yelp/mrjob/tree/master)
+- [Mrjob_Yelp](https://github.com/Yelp/mrjob/tree/master)
