@@ -118,7 +118,7 @@ Before we do that, we imported this final dataset onto Hbase.
 - 
 
 ```bash
-bin/hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns='HBASE_ROW_KEY,cf1, cf2, cf3, cf4' employee hdfs://localhost:9870/employees_data.csv
+hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=',' -Dimporttsv.columns='HBASE_ROW_KEY,cf:first_name,cf:second_name,cf:job,cf:location' employee hdfs://localhost:9870/employees_data.csv
 ```
 
 #### *Apache Spark*
