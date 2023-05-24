@@ -107,14 +107,14 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file 
 - adding sentiment
 
 ```bash
-
+hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./sentimentMapper.py -mapper ./sentimentMapper.py -file ./sentimentCSVReducer.py -reducer ./sentimentCSVReducer.py -input /climate_change_processed/part-00000 -output /climate_change_sentiment/
 ```
 
 ##### Upload processed data to Apache Hbase
 
 To this point, the data were ready for analysing. Then, we moved onto Apache Spark to undertake visualisation and machine learning. 
 Before we do that, we imported this final dataset onto Hbase.
- 
+
 - 
 #### *Apache Spark*
 
