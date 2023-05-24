@@ -50,7 +50,7 @@ The documents in modified collection on MongoDB became our final data for proces
 mongoexport --db climate_change --collection modified --out /home/alec_fei/Downloads/climate_change_reddit.json
 ```
 
-`Hadoop`
+The exported json file was then uploaded onto `Hadoop` manually. Processing and analysing were implemented afterwards based on HDFS.
 
 #### *Mapreduce*
 
@@ -78,6 +78,18 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file 
 hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./topTenTripleWordMapper.py -mapper ./topTenTripleWordMapper.py -file ./topTenTripleWordReducer.py -reducer ./topTenTripleWordReducer.py -input /climate_change/climate_change_reddit.json -output /output/top10_triple_word
 ```
 
+- dropping fields, i.e. "_id", "type"
+
+```bash
+hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./dropFieldsMapper.py -mapper ./dropFieldsMapper.py -file ./dropFieldsReducer.py -reducer ./dropFieldsReducer.py -input /climate_change/climate_change_reddit.json -output /climate_change_dropped
+```
+
+- text processing
+
+```bash
+hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./textProcessingMapper.py -mapper ./textProcessingMapper.py -file ./textProcessingReducer.py -reducer ./textProcessingReducer.py -input /climate_change_dropped/part-00000 -output /climate_change_processed/climate_change_processed.json
+```
+
 
 #### *Apache Spark*
 
@@ -94,3 +106,5 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file 
 - [MongoDB Tutorial](https://www.tutorialspoint.com/mongodb/index.htm)
 - [Apache Hadoop](https://hadoop.apache.org/)
 - [Mrjob_Yelp](https://github.com/Yelp/mrjob/tree/master)
+- [Apache Hbase](https://hbase.apache.org/book.html#quickstart)
+
