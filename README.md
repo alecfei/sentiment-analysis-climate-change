@@ -8,7 +8,7 @@ However, due to the change made by Twitter company recently, gaining its API aut
 
 - **Apache Maven and Apache Kafka**
 
-*Apache Maven is an useful tool for build and monitor projects either from scratch or with existing archetypes. Besides, Maven also has many available [remote repositories](https://mvnrepository.com/) that can be added according to the project we want to create for use. For example, to build a project using Apache Kafka to stream tweets and put them into a created topic and then consume from it and potentially transfer the data into an ideal database storage system for future use, kafka-clients and twitter-api-java-sdk are the two essential dependencies needed. The ***my-test folder*** displayed a simple pipeline of the whole streaming process created by author. However, due to the restricted access level of the API keys, only recent tweets can be retrieved through experimentation, which does not meet the purpose of this study. But it is worth noting that this approach would be more feasible within companies and organisations where supplementary budget could be guaranteed.*
+*Apache Maven is an useful tool for build and monitor java projects either from scratch or with existing archetypes. Besides, Maven also has many available [remote repositories](https://mvnrepository.com/) that can be added according to the project we want to create for use. For example, to build a project using Apache Kafka to stream tweets and put them into a created topic and then consume from it and potentially transfer the data into an ideal database storage system for future use, kafka-clients and twitter-api-java-sdk are the two essential dependencies needed. The ***my-test folder*** displayed a simple pipeline of the whole streaming process created by author. However, due to the restricted access level of the API keys, only recent tweets can be retrieved through experimentation, which does not meet the purpose of this study. But it is worth noting that this approach would be more feasible within companies and organisations where supplementary budget could be guaranteed.*
 
 - **Collect data using *snscrape* library**
 
@@ -87,12 +87,14 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file 
 - text processing
 
 ```bash
-hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./textProcessingMapper.py -mapper ./textProcessingMapper.py -file ./textProcessingReducer.py -reducer ./textProcessingReducer.py -input /climate_change_dropped/part-00000 -output /climate_change_processed/climate_change_processed.json
+hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./textProcessingMapper.py -mapper ./textProcessingMapper.py -file ./textProcessingReducer.py -reducer ./textProcessingReducer.py -input /climate_change_dropped/part-00000 -output /climate_change_processed/climate_change_processed
 ```
 
 
 #### *Apache Spark*
 
+
+?MongoDB connector and happybase?
 
 ##### References
 
