@@ -116,6 +116,11 @@ To this point, the data were ready for analysing. Then, we moved onto Apache Spa
 Before we do that, we imported this final dataset onto Hbase.
 
 - 
+
+```bash
+bin/hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns='HBASE_ROW_KEY,cf1, cf2, cf3, cf4' employee hdfs://localhost:9870/employees_data.csv
+```
+
 #### *Apache Spark*
 
 
