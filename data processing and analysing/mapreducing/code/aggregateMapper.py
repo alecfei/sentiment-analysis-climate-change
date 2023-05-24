@@ -8,11 +8,14 @@ def mapper():
     for line in sys.stdin:
         record = json.loads(line)
         date = record['date'][:10]  # Extract the year-month-day portion
-        random_key = random.random()  # Generate a random secondary sort key
-        emit(date, random_key, json.dumps(record['text']))
+        text = record['text']
+        random_key = random.random()  # Generate a random key for secondary sorting
+        emit(date, random_key, text)
 
-def emit(key, random_key, text):
-    print(f"{key}\t{random_key}\t{text}")
+def emit(date, random_key, text):
+    output = {'date': date, 'text': text}
+    print(f"{date}\t{random_key}\t{json.dumps(output)}")
 
 if __name__ == "__main__":
     mapper()
+

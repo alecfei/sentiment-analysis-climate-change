@@ -14,7 +14,7 @@ def reducer():
             if current_date:
                 random.shuffle(records)
                 for i in range(min(len(records), 900)):
-                    emit(current_date, records[i])
+                    emit(records[i])
 
             current_date = date
             records = []
@@ -24,10 +24,12 @@ def reducer():
     if current_date:
         random.shuffle(records)
         for i in range(min(len(records), 900)):
-            emit(current_date, records[i])
+            emit(records[i])
 
-def emit(key, text):
-    print(f"{key}\t{text}")
+def emit(text):
+    output = json.loads(text)
+    print(json.dumps(output))
 
 if __name__ == "__main__":
     reducer()
+

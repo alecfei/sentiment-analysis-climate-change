@@ -78,6 +78,12 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file 
 hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./topTenTripleWordMapper.py -mapper ./topTenTripleWordMapper.py -file ./topTenTripleWordReducer.py -reducer ./topTenTripleWordReducer.py -input /climate_change/climate_change_reddit.json -output /output/top10_triple_word
 ```
 
+---
+
+***It is worth mentioning that the above mapreducing process was implemented before text processing. Therefore, the insights it had given might not be so valuable, especially seeing the results of double words.***
+
+---
+
 - dropping fields, i.e. "_id", "type"
 
 ```bash
@@ -86,7 +92,7 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file 
 
 - aggregating the data: 
   
-  * We **randomly** (reducing bias) selected about 900 comments from each day between 2021-09-01 to 2022-08-31. To this stage, we were able to reduce the size of the dataset from about 4GB to 200MB for final processing and analysing.
+  * We **randomly** (reducing bias) selected about 900 comments from each day between 2021-09-01 to 2022-08-31. To this stage, we were able to reduce the size of the dataset from about 4GB to 220MB for final processing and analysing.
 
 ```bash
 hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./aggregateMapper.py -mapper ./aggregateMapper.py -file ./aggregateReducer.py -reducer ./aggregateReducer.py -input /climate_change_dropped/part-00000 -output /climate_change_aggregated
