@@ -2,44 +2,62 @@
 
 import sys
 import json
-import nltk
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from nltk.stem import WordNetLemmatizer
+import re
 import string
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
 
-# Download NLTK resources
-nltk.download('punkt')
+# Download NLTK resources if haven't
+#nltk.download('punkt')
 #nltk.download('stopwords') /already downloaded
-nltk.download('wordnet')
-nltk.download('omw-1.4')
+#nltk.download('wordnet')
+#nltk.download('omw-1.4')
 
-# Load stopwords
+# Load the list of stopwords
 stop_words = set(stopwords.words('english'))
 
-# Initialize lemmatizer
+# Initialize the WordNet lemmatizer
 lemmatizer = WordNetLemmatizer()
 
-def process_text(text):
-    # Tokenize the text
-    tokens = word_tokenize(text.lower())
+# Regular expression pattern to match words
+word_pattern = re.compile(r'\b\w+\b')
 
-    # Remove stopwords and punctuation
-    filtered_tokens = [token for token in tokens if token.lower() not in stop_words and token not in string.punctuation]
-
-    # Lemmatize the tokens
-    lemmatized_tokens = [lemmatizer.lemmatize(token) for token in filtered_tokens]
-
-    return lemmatized_tokens
+# Set of punctuation characters
+punctuation = set(string.punctuation)
 
 for line in sys.stdin:
-    record = json.loads(line)
-    if 'text' in record:
-        date = record.get('date', '')  # Retrieve the "date" field
+    try:
+        record = json.loads(line)
+        date = record['date']
         text = record['text']
-        # Process the text
-        processed_text = process_text(text)
-        # Update the record with the processed text
-        record['date'] = date  # Keep the "date" field
-        record['text'] = processed_text
-    print(json.dumps(record))
+        
+        # Tokenize the text into words
+        tokens = word_tokenize(text)
+        
+        for word in tokens:
+            # Convert the word to lowercase
+            word = word.lower()
+            
+            # Remove punctuation
+            word = ''.join(char for char in word if char not in punctuation)
+            
+            # Check if it's a stop word or non-alphabetic word
+            if word in stop_words or not word_pattern.match(word):
+                continue
+            
+            # Lemmatize the word
+            word = lemmatizer.lemmatize(word)
+            
+            # Emit the date and word as key-value pairs
+            print(f'date\t{date}')
+            print(f'word\t{word}')
+    
+    except ValueError as e:
+        # Handle any JSON decoding errors
+        continue
+
+
+
+
+

@@ -80,7 +80,7 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file 
 
 ---
 
-***It is worth mentioning that the above mapreducing process was implemented before text processing. Therefore, the insights it had given might not be so valuable, especially seeing the results of double words.***
+***It is worth mentioning that the above mapreducing process was implemented before text processing. Therefore, the insights it had been given might not be so valuable, especially seeing the results of double words.***
 
 ---
 
@@ -92,19 +92,30 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file 
 
 - aggregating the data: 
   
-  * We **randomly** (reducing bias) selected about 900 comments from each day between 2021-09-01 to 2022-08-31. To this stage, we were able to reduce the size of the dataset from about 4GB to 220MB for final processing and analysing.
+  * We **randomly** (reducing bias) selected about 900 comments from each day between 2021-09-01 to 2022-08-31. To this stage, we were able to reduce the size of the dataset from about 4GB to 220MB for final processing.
 
 ```bash
 hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./aggregateMapper.py -mapper ./aggregateMapper.py -file ./aggregateReducer.py -reducer ./aggregateReducer.py -input /climate_change_dropped/part-00000 -output /climate_change_aggregated
 ```
 
-- text processing
+- processing text field, i.e. dropping stopwords and punctuations, tokenising etc.
 
 ```bash
-hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./textProcessingMapper.py -mapper ./textProcessingMapper.py -file ./textProcessingReducer.py -reducer ./textProcessingReducer.py -input /climate_change_dropped/part-00000 -output /climate_change_processed/climate_change_processed
+hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./textProcessingMapper.py -mapper ./textProcessingMapper.py -file ./textProcessingReducer.py -reducer ./textProcessingReducer.py -input /climate_change_aggregated/part-00000 -output /climate_change_processed
 ```
 
+- adding sentiment
 
+```bash
+
+```
+
+##### Upload processed data to Apache Hbase
+
+To this point, the data were ready for analysing. Then, we moved onto Apache Spark to undertake visualisation and machine learning. 
+Before we do that, we imported this final dataset onto Hbase.
+ 
+- 
 #### *Apache Spark*
 
 
