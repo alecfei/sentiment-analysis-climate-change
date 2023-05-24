@@ -104,7 +104,7 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file 
 hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./textProcessingMapper.py -mapper ./textProcessingMapper.py -file ./textProcessingReducer.py -reducer ./textProcessingReducer.py -input /climate_change_aggregated/part-00000 -output /climate_change_processed
 ```
 
-- adding sentiment
+- adding sentiments
 
 ```bash
 hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./sentimentMapper.py -mapper ./sentimentMapper.py -file ./sentimentCSVReducer.py -reducer ./sentimentCSVReducer.py -input /climate_change_processed/part-00000 -output /climate_change_sentiment/

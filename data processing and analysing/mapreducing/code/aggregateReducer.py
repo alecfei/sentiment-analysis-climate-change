@@ -13,7 +13,7 @@ def reducer():
         if current_date != date:
             if current_date:
                 random.shuffle(records)
-                for i in range(min(len(records), 900)):
+                for i in range(min(len(records), 20)):
                     emit(records[i])
 
             current_date = date
@@ -23,7 +23,7 @@ def reducer():
 
     if current_date:
         random.shuffle(records)
-        for i in range(min(len(records), 900)):
+        for i in range(min(len(records), 20)):
             emit(records[i])
 
 def emit(text):
