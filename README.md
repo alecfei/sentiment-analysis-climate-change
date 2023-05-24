@@ -113,15 +113,14 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file 
 ##### Upload processed data to Apache Hbase
 
 To this point, the data were ready for analysing. Then, we moved onto Apache Spark to undertake visualisation and machine learning. 
-Before we do that, we imported this final dataset onto Hbase.
-
-- 
+Before we do that, we imported this final dataset onto Hbase. Code as below:
 
 ```bash
-hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=',' -Dimporttsv.columns='HBASE_ROW_KEY,cf:first_name,cf:second_name,cf:job,cf:location' employee hdfs://localhost:9870/employees_data.csv
+bin/hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=',' -Dimporttsv.columns='HBASE_ROW_KEY,cf:date,cf:texts,cf:sentiment' climate_change_sentiment hdfs://localhost:9000/sentiment/climate_change_sentiment.csv
 ```
 
 #### *Apache Spark*
+
 
 
 ?MongoDB connector and happybase?
