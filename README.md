@@ -121,9 +121,7 @@ bin/hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=',' 
 
 #### *Apache Spark*
 
-
-
-?MongoDB connector and happybase?
+The processed dataset on Hadoop was reading using `pyspark`. After some EDA with `Spark`, we transfer into pandas dataframe to do further analysis.
 
 ##### References
 
