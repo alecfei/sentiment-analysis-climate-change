@@ -146,4 +146,4 @@ The processed dataset on Hadoop was read using `Apache Spark` through `jupyter n
 - [Apache Hadoop](https://hadoop.apache.org/)
 - [Mrjob_Yelp](https://github.com/Yelp/mrjob/tree/master)
 - [Apache Hbase](https://hbase.apache.org/book.html#quickstart)
-
+- [Stackoverflow](https://stackoverflow.com/)
