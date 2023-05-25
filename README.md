@@ -121,7 +121,17 @@ bin/hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=',' 
 
 #### *Apache Spark*
 
-The processed dataset on Hadoop was reading using `pyspark`. After some EDA with `Spark`, we transfer into pandas dataframe to do further analysis.
+The processed dataset on Hadoop was read using `Apache Spark` through `jupyter notebook`. After some EDA with spark session, we transferred it to pandas dataframe to do further analysis.
+
+1. The count of sentiment categories from 2021 to 2022
+
+<p align="center">
+  <img src="path/to/category_count.png" alt="Image Alt Text" />
+</p>
+
+2. The fluctuation of sentiments from 2021 to 2022
+
+
 
 ##### References
 
