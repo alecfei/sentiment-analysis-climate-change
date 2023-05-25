@@ -121,19 +121,26 @@ bin/hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=',' 
 
 #### *Apache Spark*
 
-The processed dataset on Hadoop was read using `Apache Spark` through `jupyter notebook`. After some EDA with spark session, we transferred it to pandas dataframe to do further analysis.
+The processed dataset on Hadoop was read using `Apache Spark` through `jupyter notebook`. After some EDA with spark session, we transferred it to pandas dataframe to do further analysis of the climate change sentiment from September 2021 to August 2022.
 
-1. The count of sentiment categories from 2021 to 2022
+1. The category count of sentiment
 
 <p align="center">
   <img src="category_count.png" alt="Image Alt Text" />
 </p>
 
-2. The fluctuation of sentiments from 2021 to 2022
+2. The fluctuation of sentiment
 
 <p align="center">
-  <img src="sentiment_change.png" alt="Image Alt Text" />
+  <img src="yearly_change.png" alt="Image Alt Text" />
 </p>
+
+3. The monthly trend of sentiment
+
+<p align="center">
+  <img src="monthly_trend.png" alt="Image Alt Text" />
+</p>
+
 
 
 ##### References
