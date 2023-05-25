@@ -126,7 +126,7 @@ The processed dataset on Hadoop was read using `Apache Spark` through `jupyter n
 1. The count of sentiment categories from 2021 to 2022
 
 <p align="center">
-  <img src="path/to/category_count.png" alt="Image Alt Text" />
+  <img src="/home/alec_fei/climate change/category_count.png" alt="Image Alt Text" />
 </p>
 
 2. The fluctuation of sentiments from 2021 to 2022
