@@ -144,7 +144,7 @@ The processed dataset on Hadoop was read using `Apache Spark` through `jupyter n
 4. ForcasterAutoReg model
 
 <p align="center">
-  <img src="forecastautoreg_model.png" alt="Image Alt Text" />
+  <img src="forecasterautoreg_model.png" alt="Image Alt Text" />
 </p>
 
 5. ARIMA model
