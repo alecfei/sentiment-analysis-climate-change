@@ -141,6 +141,17 @@ The processed dataset on Hadoop was read using `Apache Spark` through `jupyter n
   <img src="monthly_trend.png" alt="Image Alt Text" />
 </p>
 
+4. ForcasterAutoReg model
+
+<p align="center">
+  <img src="forecastautoreg_model.png" alt="Image Alt Text" />
+</p>
+
+5. ARIMA model
+
+<p align="center">
+  <img src="arima_model.png" alt="Image Alt Text" />
+</p>
 
 
 ##### References
@@ -156,3 +167,4 @@ The processed dataset on Hadoop was read using `Apache Spark` through `jupyter n
 - [Apache Hadoop](https://hadoop.apache.org/)
 - [Apache Hbase](https://hbase.apache.org/book.html#quickstart)
 - [Stackoverflow](https://stackoverflow.com/)
+
