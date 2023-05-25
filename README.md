@@ -131,6 +131,9 @@ The processed dataset on Hadoop was read using `Apache Spark` through `jupyter n
 
 2. The fluctuation of sentiments from 2021 to 2022
 
+<p align="center">
+  <img src="sentiment_change" alt="Image Alt Text" />
+</p>
 
 
 ##### References
