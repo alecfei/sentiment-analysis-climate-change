@@ -153,6 +153,10 @@ The processed dataset on Hadoop was read using `Apache Spark` through `jupyter n
   <img src="arima_model.png" alt="Image Alt Text" />
 </p>
 
+Finally, by comparing the `root mean squared error` of both optimised models, ForecasterAutoReg achieved about 0.12, and ARIMA ended up around 0.16. Therefore, we chose ForecasterAutoReg model as our final application. A time-series forecasting dashboard was then created using this algorithm.
+
+It is worth mentioning that, throughout the whole procedure of this project, the computer power of ours is at a low level. As a result, the tasks had to be simplified accordingly. However, the author still witnessed the exceptional power of these big data analysis tools, particularly **MongoDB** and **Hadoop**, even on an insufficient machine.
+
 
 ##### References
 
@@ -167,4 +171,3 @@ The processed dataset on Hadoop was read using `Apache Spark` through `jupyter n
 - [Apache Hadoop](https://hadoop.apache.org/)
 - [Apache Hbase](https://hbase.apache.org/book.html#quickstart)
 - [Stackoverflow](https://stackoverflow.com/)
-
