@@ -92,7 +92,7 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file 
 
 - aggregating the data: 
   
-  * We **randomly** (reducing bias) selected 20 comments from each day between 2021-09-01 to 2022-08-31. To this stage, we were able to reduce the size of the dataset from about 4GB to 220MB for final processing.
+  * We **randomly** (reducing bias) selected 20 comments from each day between 2021-09-01 to 2022-08-31. To this stage, we were able to reduce the size of the dataset from about 4GB to 6MB for final processing.
 
 ```bash
 hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.4.jar -file ./aggregateMapper.py -mapper ./aggregateMapper.py -file ./aggregateReducer.py -reducer ./aggregateReducer.py -input /climate_change_dropped/part-00000 -output /climate_change_aggregated
